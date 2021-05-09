@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>Your Passwords</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">email</th>
+        <th scope="col">passwords</th>
+        <th scope="col">websites</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      {% for pass in passwords %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{pass.email}}</td>
+        <td>{{pass.password}}</td>
+        <td>{{pass.website}}</td>
+      {% endfor %}
+
+      <a href='/logout'>
+        <button type="button" class="btn btn-outline-success">
+            logout
+        </button>
+    </a>
+
+{% endblock %}
